@@ -8,7 +8,7 @@ from iniciativas.items import IniciativasItem
 class IniciativasListScrapy(CrawlSpider):
     name = "iniciativas"
     allowed_domains = ['iniciativas.chileconvencion.cl', ]
-    start_urls = ["https://iniciativas.chileconvencion.cl/", ]
+    start_urls = ["https://iniciativas.chileconvencion.cl/m/iniciativa_popular/", ]
 
     rules = (
         Rule(LinkExtractor(allow=(), restrict_css='#iniciativas div.iniciativa h1', ), callback='parse_item'),
