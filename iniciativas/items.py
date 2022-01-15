@@ -15,4 +15,6 @@ class IniciativasItem(scrapy.Item):
     situacion_ideal = scrapy.Field()
     que_debe_contemplar = scrapy.Field()
     propuesta_articulado = scrapy.Field()
+    categoria = scrapy.Field()
+    url = scrapy.Field()
 

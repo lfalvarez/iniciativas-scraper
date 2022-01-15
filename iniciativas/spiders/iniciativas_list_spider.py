@@ -18,13 +18,15 @@ class IniciativasListScrapy(CrawlSpider):
         item = IniciativasItem()
         text_id = response.css('.objeto h2::text').get()
         apoyo_text = response.css('#apoyo strong::text').get().replace('.', '').replace(' ', '')
-        item['id'] = int(text_id.replace('Iniciativa Nº ', '').replace('.', ''))
+        id_iniciativa = int(text_id.replace('Iniciativa Nº ', '').replace('.', ''))
+        item['id'] = id_iniciativa
         item['titulo'] = response.css('.objeto h1::text').get()
         item['apoyos'] = int(apoyo_text)
         propuesta_parrafos = response.xpath('//*[@id="propuesta"]/p')
         item['problema'] = BeautifulSoup(propuesta_parrafos[0].get(), "lxml").text
         item['situacion_ideal'] = BeautifulSoup(propuesta_parrafos[1].get(), "lxml").text
         item['que_debe_contemplar'] = BeautifulSoup(propuesta_parrafos[2].get(), "lxml").text
-        item['propuesta_articulado'] = BeautifulSoup(propuesta_parrafos[3].get(), "lxml").text
-        self.logger.info('Hola!!!!! %s', item)
+        categoria = response.xpath('//div[contains(@class,"rainbow")]')
+        item['categoria'] = BeautifulSoup(categoria.get(), "lxml").text
+        item['url'] = f'https://iniciativas.chileconvencion.cl/m/iniciativa_popular/o/{id_iniciativa}'
         return item
