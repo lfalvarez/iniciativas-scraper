@@ -26,6 +26,8 @@ class IniciativasListScrapy(CrawlSpider):
         item['problema'] = BeautifulSoup(propuesta_parrafos[0].get(), "lxml").text
         item['situacion_ideal'] = BeautifulSoup(propuesta_parrafos[1].get(), "lxml").text
         item['que_debe_contemplar'] = BeautifulSoup(propuesta_parrafos[2].get(), "lxml").text
+        propuesta_articulado = BeautifulSoup(propuesta_parrafos[4].get(), "lxml").text
+        item['propuesta_articulado'] = propuesta_articulado
         categoria = response.xpath('//div[contains(@class,"rainbow")]')
         item['categoria'] = BeautifulSoup(categoria.get(), "lxml").text
         item['url'] = f'https://iniciativas.chileconvencion.cl/m/iniciativa_popular/o/{id_iniciativa}'
