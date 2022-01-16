@@ -2,6 +2,8 @@
 Este proyecto busca tener las Iniciativas Populares de Norma en un spreadsheet para poder estudiarlas.
 Se ejecutará en un google actions todos los días.
 
+El resultado se encuentra [en este google sheet](https://docs.google.com/spreadsheets/d/10sz_r2c0kEGrLYvosMb-zoy26viaPj4YCUB9tGxYg7E/edit#gid=230416022).
+
 ![Apruebo](https://images.squarespace-cdn.com/content/v1/5c6d8645aadd344a28004478/1583788926277-MC6TRFK44PMA4UNSG2KI/Calca_Constituyente_2.png?format=2500w)
 
 ## Si necesitas instalarlo en tu local
