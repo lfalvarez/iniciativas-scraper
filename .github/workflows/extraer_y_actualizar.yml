@@ -1,0 +1,31 @@
+name: Extraer iniciativas populares de norma y dejar en un google sheets
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: Escrapea
+      run: |
+        python scraper.py
+    - name: "Ordenar el resultado"
+      run: |
+        python ordena_por_apoyos.py
+    - name: "Subir a google sheets"
+      env:
+        SHEET_ID: ${{ secrets.SHEET_ID }}
+        SERVICE_ACCOUNT_CREDS: ${{ secrets.SERVICE_ACCOUNT_CREDS }}
+      run: |
+        python subidor_a_spreadsheets.py
