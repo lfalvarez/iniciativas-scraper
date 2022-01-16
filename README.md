@@ -15,13 +15,14 @@ pip install -r requirements.txt
 python scraper.py
 ```
 Eso dejará el contenido escrapeado en un archivo llamado `file.csv`.
-### Me dí cuenta que mucha gente quiere las iniciativas ordenadas por lo que el segundo paso es ordenarlas
+### 2) Ordenarlas por cantidad de apoyos.
+Me dí cuenta que mucha gente quiere las iniciativas ordenadas por lo que el segundo paso es ordenarlas.
 ```
 python ordena_por_apoyos.py
 ```
 Este paso dejará las propuestas ordenadas por cantidad de apoyos en un archivo llamado `ordenadas.csv`.
 
-### Subir esto a google spreadsheets
+### 3) Subir esto a google spreadsheets
 
 Esto es más bien una nota para el yo del futuro, esto lo he necesitado antes.
 
