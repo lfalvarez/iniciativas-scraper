@@ -7,7 +7,7 @@ process = CrawlerProcess(settings={
         "file.csv": {
             "format": "csv",
             "fields": ['id', 'apoyos', 'titulo', 'categoria', 'problema', 'propuesta_articulado', 'que_debe_contemplar',
-                       'situacion_ideal', 'url']
+                       'situacion_ideal', 'propone', 'url']
         },
     },
 })

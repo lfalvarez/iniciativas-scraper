@@ -17,4 +17,5 @@ class IniciativasItem(scrapy.Item):
     propuesta_articulado = scrapy.Field()
     categoria = scrapy.Field()
     url = scrapy.Field()
+    propone = scrapy.Field()
 
