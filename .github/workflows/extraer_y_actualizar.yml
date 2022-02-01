@@ -2,7 +2,7 @@ name: Extraer iniciativas populares de norma y dejar en un google sheets
 on:
   workflow_dispatch:
   schedule:
-    - cron: '50 0-3 1 2 2'
+    - cron: '50 0-23 * * *'
 
 jobs:
   build:
